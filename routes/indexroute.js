@@ -1,9 +1,8 @@
 import { Router } from "express";
+import getIndexContent from "../controllers/indexcontroller.js";
 
 const indexRouter = Router();
 
-indexRouter.get("/",(req,res)=>{
-    res.sendFile("index.html",{root:process.cwd()});
-})
+indexRouter.get("/",getIndexContent);
 
 export default indexRouter;

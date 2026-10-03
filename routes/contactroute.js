@@ -1,9 +1,8 @@
 import { Router } from "express";
+import getContactMeContent from "../controllers/contactmecontroller.js";
 
 const contactMeRouter = Router();
 
-contactMeRouter.get("/",(req,res)=>{
-    res.sendFile("contact-me.html",{root:process.cwd()});
-})
+contactMeRouter.get("/",getContactMeContent);
 
 export default contactMeRouter;
