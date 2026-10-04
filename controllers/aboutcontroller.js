@@ -3,11 +3,7 @@ import customError from "../errors/customnotfounderror.js";
 
 async function getAboutContent(req,res) {
     
-    const aboutContent = await fs.readFile("./about.html","utf-8");
-    if(!aboutContent) {
-        throw new customError("about info not found!");
-    }
-    res.send(aboutContent);
+    res.render("about",{message:"You requested for our about page"});
 }
 
 export default getAboutContent;
